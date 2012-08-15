@@ -29,7 +29,7 @@ use Luracast\Restler\Restler;
 require_once '../../vendor/restler.php';
 
 $r = new Restler();
-$r->addAPIClass('Luracast\Restler\Resources'); //this creates resources.json at API Root
+$r->addAPIClass('Luracast\\Restler\\Resources'); //this creates resources.json at API Root
 $r->addAPIClass('YourOwnCustomAPIClass');
 //... add more api classes if needed
 $r->handle();
