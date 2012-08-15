@@ -1,7 +1,9 @@
-Swagger UI
-==========
+Restler API Explorer
+====================
 
-Swagger UI is part of [Swagger](http://swagger.wordnik.com/) project.
+Restler API Explorer is tweaked from Swagger UI which is part of [Swagger](http://swagger.wordnik.com/) project.
+
+We modified Swagger UI so that it can be placed along with a [Restler](https://github.com/Luracast/Restler/) based API Server for API Discovery and Exploration.
 
 Swagger UI is a dependency-free collection of HTML, Javascript, and CSS assets that dynamically 
 generate beautiful documentation and sandbox from a [Swagger-compliant](https://github.com/wordnik/swagger-core/wiki) API. Because Swagger UI has no
@@ -16,11 +18,25 @@ How to Use It
 3. You should see the distribution under the dist folder. Open ./dist/index.html to launch Swagger UI in a browser
 
 ### Use
-Once you open the Swagger UI, it will load the [Swagger Petstore](http://petstore.swagger.wordnik.com/api/resources.json) service and show its APIs.
-You can enter your own server url and click explore to view the API.
+1. Copy the dist folder to the Restler (version 3 or above) based API root, and rename it to **explorer** (or what ever you find suitable)
+2. Add `Luracast\Restler\Resourses` as an API class as shown below
+3. Open the API Root/explorer in the browser. It should be listing the resources
+4. Add proper PHPDoc comments to your API methods and see them magically appear in the explorer :)
+
+```php
+<?php
+use Luracast\Restler\Restler;
+require_once '../../vendor/restler.php';
+
+$r = new Restler();
+$r->addAPIClass('Luracast\\Restler\\Resources'); //this creates resources.json at API Root
+$r->addAPIClass('YourOwnCustomAPIClass');
+//... add more api classes if needed
+$r->handle();
+```
 
 ### Customize
-You may choose to customize Swagger UI for your organization. Here is an overview of what the various directories contain
+You may choose to customize Restler API Explorer / Swagger UI for your organization. Here is an overview of what the various directories contain
 
 -    dist: Contains a distribution which you can deploy on a server or load from your local machine.
 -    bin: Contains files used by swagger-ui for its build/test. These are not required by the distribution.
@@ -54,9 +70,9 @@ If you enter an api key in swagger-ui, it sends a parameter named 'api\_key' as 
 How to Improve It
 -----------------
 
-Create your own fork of [wordnik/swagger-ui](https://github.com/wordnik/swagger-ui)
+Create your own fork of [Luracast/Restler-API-Explorer](https://github.com/Luracast/Restler-API-Explorer).
 
-To share your changes, [submit a pull request](https://github.com/wordnik/swagger-ui/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/Luracast/Restler-API-Explorer/pull/new/master).
 
 License
 -------
