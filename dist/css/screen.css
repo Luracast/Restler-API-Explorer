@@ -289,13 +289,13 @@ body {
     font-style: italic;
     color: #999999; }
   body #header {
-    background-color: #89bf04;
+    background-color: #646257;
     padding: 14px; }
     body #header a#logo {
       font-size: 1.5em;
       font-weight: bold;
       text-decoration: none;
-      background: transparent url(http://swagger.wordnik.com/images/logo_small.png) no-repeat left center;
+      background: transparent url(http://luracast.com/images/restler3-icon.png) no-repeat left center;
       padding: 20px 0 20px 40px;
       color: white; }
     body #header form#api_selector {
@@ -322,7 +322,7 @@ body {
           padding: 6px 8px;
           font-size: 0.9em;
           color: white;
-          background-color: #547f00;
+          background-color: #000000;
           -moz-border-radius: 4px;
           -webkit-border-radius: 4px;
           -o-border-radius: 4px;
@@ -330,7 +330,7 @@ body {
           -khtml-border-radius: 4px;
           border-radius: 4px; }
           body #header form#api_selector .input a#explore:hover {
-            background-color: #547f00; }
+            background-color: #a41e22; }
   body p#colophon {
     margin: 0 15px 40px 15px;
     padding: 10px 0;

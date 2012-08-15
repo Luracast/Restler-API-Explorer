@@ -162,12 +162,12 @@ templates['main'] = template(function (Handlebars,depth0,helpers,partials,data) 
   var buffer = "", stack1, foundHelper, self=this, functionType="function", helperMissing=helpers.helperMissing, undef=void 0, escapeExpression=this.escapeExpression;
 
 
-  buffer += "\n<div class='container' id='resources_container'>\n    <ul id='resources'>\n    </ul>\n\n    <div class=\"footer\">\n        <br>\n        <br>\n        <h4 style=\"color: #999\">[<span style=\"font-variant: small-caps\">base url</span>: ";
+  buffer += "<div class='container' id='resources_container'>\n    <ul id='resources'>\n    </ul>\n\n    <div class=\"footer\" style=\"float:right; margin-top: 100px\">\n        <h4 style=\"color: #AAAAAA;\"> ";
   foundHelper = helpers.basePath;
   stack1 = foundHelper || depth0.basePath;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "basePath", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "]</h4>\n    </div>\n</div>";
+  buffer += escapeExpression(stack1) + " - <span style=\"font-variant:\n                                                        small-caps\">powered by\n        <a target=\"_blank\" href=\"http://luracast.com/products/restler/\">Luracast\n            Restler</a>\n         and\n        <a target=\"_blank\" href=\"http://swagger.wordnik.com/\">Swagger UI</a></span>\n        </h4>\n    </div>\n</div>";
   return buffer;});
 })();
 
@@ -762,7 +762,7 @@ templates['resource'] = template(function (Handlebars,depth0,helpers,partials,da
   stack1 = foundHelper || depth0.url;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "url", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "'>Raw</a>\n        </li>\n    </ul>\n</div>\n<ul class='endpoints' id='";
+  buffer += escapeExpression(stack1) + "' target=\"_blank\">Raw</a>\n        </li>\n    </ul>\n</div>\n<ul class='endpoints' id='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
