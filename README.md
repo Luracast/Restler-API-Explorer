@@ -1,7 +1,10 @@
 Restler API Explorer
 ====================
 
-Restler API Explorer is tweaked from Swagger UI which is part of [Swagger](http://swagger.wordnik.com/) project.
+Restler API Explorer is tweaked from Swagger UI which is part of [Swagger]
+(http://swagger.wordnik.com/) project which allows you to produce,
+visualize and consume your OWN RESTful services.
+No proxy or 3rd party services required.  Do it your own way.
 
 We modified Swagger UI so that it can be placed along with a [Restler](https://github.com/Luracast/Restler/) based API Server for API Discovery and Exploration.
 
@@ -12,7 +15,13 @@ dependencies, you can host it in any server environment, or on your local machin
 How to Use It
 -------------
 
+### Download
+You can use the Restler API Explorer code AS-IS!  No need to build or recompile--just [download](https://github.com/Luracast/Restler-API-Explorer/downloads) the distribution,
+unpack and start using it.  If you like Restler API Explorer as-is, stop here.
+
 ### Build
+You can rebuild swagger-ui on your own to tweak it or just so you can say you did.  To do so, follow these steps:
+ 
 1. Install [CoffeeScript](http://coffeescript.org/#installation) which will give you [cake](http://coffeescript.org/#cake)
 2. Run cake dist
 3. You should see the distribution under the dist folder. Open ./dist/index.html to launch Swagger UI in a browser
@@ -48,6 +57,25 @@ You may choose to customize Restler API Explorer / Swagger UI for your organizat
     -    src/main/html: the html files, some images and css
     -    src/main/javascript: some legacy javascript referenced by CofffeeScript code
 
+### SwaggerUi
+To use swagger-ui you should take a look at the [source of swagger-ui html page](https://github.com/wordnik/swagger-ui/tree/master/src/main/html) and customize it. This basically requires you to instantiate a SwaggerUi object and call load() on it as below:
+```javascript
+    window.swaggerUi = new SwaggerUi({
+        discoveryUrl:"http://petstore.swagger.wordnik.com/api/resources.json",
+        dom_id:"swagger-ui-container",
+        apiKey:"special-key",
+        supportHeaderParams: false,
+        headers: { "Authorization": "XXXX", "someOtherHeader": "YYYY" },
+        supportedSubmitMethods: ['get', 'post', 'put']
+    });
+
+    window.swaggerUi.load();
+```
+* *discoveryUrl* parameter should point to a resource listing url as per [Swagger Spec](https://github.com/wordnik/swagger-core/wiki)
+* *dom_id parameter* is the the id of a dom element inside which SwaggerUi will put the user interface for swagger
+* All other parameters are explained in greater detail below
+
+
 ### HTTP Methods and API Invocation
 swagger-ui supports invocation of all HTTP methods APIs but only GET methods APIs are enabled by default. You can choose to enable other HTTP methods like POST, PUT and DELETE. This can be enabled by [setting the supportedSubmitMethods parameter when creating SwaggerUI instance](https://github.com/wordnik/swagger-ui/blob/f2e63c65a759421aad590b7275371cd0c06c74ea/src/main/html/index.html#L49). 
 
@@ -61,6 +89,11 @@ _Note that for POST/PUT body, you'd need to paste in the request data in an appr
 header parameters are supported. However because of [Cross-Origin Resource Sharing](http://www.w3.org/TR/cors/) restrictions, swagger-ui, by default, does not send header parameters. This can be enabled by [setting the supportHeaderParams to true when creating SwaggerUI instance](https://github.com/wordnik/swagger-ui/blob/f2e63c65a759421aad590b7275371cd0c06c74ea/src/main/html/index.html#L48) as below:
 
     supportHeaderParams: true
+
+### Custom Header Parameters - (For Basic auth etc)
+If you have some header parameters which you need to send with every request, use the headers as below:
+
+     headers: { "Authorization": "XXXX", "someOtherHeader": "YYYY" }
 
 ### Api Key Parameter
 If you enter an api key in swagger-ui, it sends a parameter named 'api\_key' as a query (or as a header param if you've enabled it as described above). You may not want to use the name 'api\_key' as the name of this parameter. You can change its name by setting the _apiKeyName_ parameter when you instantiate a SwaggerUI instance. For example to call it 'sessionId'
