@@ -123,6 +123,13 @@ ol {
     font-size: 0.9em;
     color: #333333; }
 
+comment {
+    padding: 2px;
+    color: #7e7b6d;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+}
+
 .markdown h3 {
   color: #547f00; }
 .markdown h4 {
