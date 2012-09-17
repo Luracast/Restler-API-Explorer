@@ -1,5 +1,1 @@
-.gitattributes export-ignore
-.gitignore export-ignore
-logo_small.png export-ignore
-wordnik_api.png export-ignore
-petstore_api.png export-ignore
+lib -export-ignore

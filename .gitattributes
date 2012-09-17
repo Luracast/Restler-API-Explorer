@@ -6,3 +6,6 @@ bin export-ignore
 lib export-ignore
 node_modules export-ignore
 src export-ignore
+logo_small.png export-ignore
+wordnik_api.png export-ignore
+petstore_api.png export-ignore
