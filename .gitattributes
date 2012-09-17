@@ -3,6 +3,6 @@
 Cakefile export-ignore
 swagger-ui.json export-ignore
 bin export-ignore
-/lib export-ignore
+/lib/ export-ignore
 node_modules export-ignore
 src export-ignore
