@@ -58,7 +58,7 @@ You may choose to customize Restler API Explorer / Swagger UI for your organizat
     -    src/main/html: the html files, some images and css
     -    src/main/javascript: some legacy javascript referenced by CofffeeScript code
 
-### SwaggerUi
+### SwaggerUI
 To use swagger-ui you should take a look at the [source of swagger-ui html page](https://github.com/wordnik/swagger-ui/tree/master/src/main/html) and customize it. This basically requires you to instantiate a SwaggerUi object and call load() on it as below:
 ```javascript
     window.swaggerUi = new SwaggerUi({
