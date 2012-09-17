@@ -16,18 +16,19 @@ How to Use It
 -------------
 
 ### Download
-You can use the Restler API Explorer code AS-IS!  No need to build or recompile--just [download](https://github.com/Luracast/Restler-API-Explorer/downloads) the distribution,
-unpack and start using it.  If you like Restler API Explorer as-is, stop here.
+You can use the Restler API Explorer code AS-IS!  No need to build or recompile--just [download](https://github.com/Luracast/Restler-API-Explorer/zipball/master) the distribution,
+unpack and take the content inside `dist` folder and start using it.  If you like Restler API Explorer as-is, stop here.
 
 ### Build
 You can rebuild swagger-ui on your own to tweak it or just so you can say you did.  To do so, follow these steps:
  
-1. Install [CoffeeScript](http://coffeescript.org/#installation) which will give you [cake](http://coffeescript.org/#cake)
-2. Run cake dist
-3. You should see the distribution under the dist folder. Open ./dist/index.html to launch Swagger UI in a browser
+1. Clone this repository. Downloading as Zip or Tarball won't include the source
+2. Install [CoffeeScript](http://coffeescript.org/#installation) which will give you [cake](http://coffeescript.org/#cake)
+3. Run cake dist from the root of this project
+4. You should see the distribution under the dist folder. Open ./dist/index .html to launch Swagger UI in a browser
 
 ### Use
-1. Copy the dist folder to the Restler (version 3 or above) based API root, and rename it to **explorer** (or what ever you find suitable)
+1. Copy the dist folder to the Restler (version 3 or above) based API root, and rename it to **explorer** (or whatever you find suitable)
 2. Add `Luracast\Restler\Resourses` as an API class as shown below
 3. Open the API Root/explorer in the browser. It should be listing the resources
 4. Add proper PHPDoc comments to your API methods and see them magically appear in the explorer :)

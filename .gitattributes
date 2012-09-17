@@ -1,5 +1,7 @@
 .gitattributes export-ignore
 .gitignore export-ignore
+Cakefile export-ignore
+swagger-ui.json export-ignore
 bin export-ignore
 lib export-ignore
 node_modules export-ignore
