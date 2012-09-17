@@ -1,0 +1,5 @@
+.gitattributes export-ignore
+.gitignore export-ignore
+images\logo_small.png export-ignore
+images\wordnik_api.png export-ignore
+images\petstore_api.png export-ignore
