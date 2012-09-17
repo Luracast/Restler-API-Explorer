@@ -1,0 +1,6 @@
+.gitattributes export-ignore
+.gitignore export-ignore
+bin export-ignore
+lib export-ignore
+node_modules export-ignore
+src export-ignore
