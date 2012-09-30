@@ -455,7 +455,7 @@ body #header form#api_selector .input a#explore {
     padding: 6px 8px;
     font-size: 0.9em;
     color: white;
-    background-color: #547f00;
+    background-color: #000000;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     -o-border-radius: 4px;
@@ -465,7 +465,7 @@ body #header form#api_selector .input a#explore {
 }
 
 body #header form#api_selector .input a#explore:hover {
-    background-color: #547f00;
+    background-color: #a41e22;
 }
 
 body p#colophon {
