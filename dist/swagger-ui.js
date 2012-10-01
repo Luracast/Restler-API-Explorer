@@ -1205,7 +1205,7 @@ templates['resource'] = template(function (Handlebars,depth0,helpers,partials,da
             return _this.showCompleteStatus(data);
           }
         };
-        if (obj.type.toLowerCase() === "post" || obj.type.toLowerCase() === "put") {
+        if (obj.type.toLowerCase() === "post" || obj.type.toLowerCase() === "put" || obj.type.toLowerCase() === "patch") {
           obj.contentType = "application/json";
         }
         jQuery.ajax(obj);
