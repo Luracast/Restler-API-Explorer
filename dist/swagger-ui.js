@@ -194,7 +194,7 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                    <h4>Response Class</h4>\n                    ";
+  buffer += "\n                    <h4>Response Information</h4>\n                    ";
   stack1 = depth0.responseClassSignature;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
