@@ -24,8 +24,9 @@ You can rebuild swagger-ui on your own to tweak it or just so you can say you di
  
 1. Clone this repository. Downloading as Zip or Tarball won't include the source
 2. Install [CoffeeScript](http://coffeescript.org/#installation) which will give you [cake](http://coffeescript.org/#cake)
-3. Run cake dist from the root of this project
-4. You should see the distribution under the dist folder. Open ./dist/index .html to launch Swagger UI in a browser
+3. Install [handlebars](http://handlebarsjs.com/) using `npm install handlebars -g`
+4. Run `cake dist` from the root of this project
+5. You should see the distribution under the dist folder. Open `./dist/index .html` to launch API Explorer in a browser
 
 ### Use
 1. Copy the dist folder to the Restler (version 3 or above) based API root, and rename it to **explorer** (or whatever you find suitable)
@@ -46,7 +47,7 @@ $r->handle();
 ```
 
 ### Customize
-You may choose to customize Restler API Explorer / Swagger UI for your organization. Here is an overview of what the various directories contain
+You may choose to customize API Explorer for your organization. Here is an overview of whats in its various directories:
 
 -    dist: Contains a distribution which you can deploy on a server or load from your local machine.
 -    bin: Contains files used by swagger-ui for its build/test. These are not required by the distribution.
@@ -60,6 +61,7 @@ You may choose to customize Restler API Explorer / Swagger UI for your organizat
 
 ### SwaggerUI
 To use swagger-ui you should take a look at the [source of swagger-ui html page](https://github.com/wordnik/swagger-ui/tree/master/src/main/html) and customize it. This basically requires you to instantiate a SwaggerUi object and call load() on it as below:
+
 ```javascript
     window.swaggerUi = new SwaggerUi({
         discoveryUrl:"http://petstore.swagger.wordnik.com/api/resources.json",
@@ -72,8 +74,13 @@ To use swagger-ui you should take a look at the [source of swagger-ui html page]
 
     window.swaggerUi.load();
 ```
+
 * *discoveryUrl* parameter should point to a resource listing url as per [Swagger Spec](https://github.com/wordnik/swagger-core/wiki)
 * *dom_id parameter* is the the id of a dom element inside which SwaggerUi will put the user interface for swagger
+* *booleanValues* SwaggerUI renders boolean data types as a dropdown. By default it provides a 'true' and 'false' string as the possible choices. You can use this parameter to change the values in dropdown to be something else, for example 0 and 1 by setting booleanValues to new Array(0, 1)
+* *docExpansion* controls how the API listing is displayed. It can be set to 'none' (default), 'list' (shows operations for each resource), or 'full' (fully expanded: shows operations and their details)
+* *onComplete* is a callback function parameter which can be passed to be notified of when SwaggerUI has completed rendering successfully.
+* *onFailure* is a callback function parameter which can be passed to be notified of when SwaggerUI encountered a failure was unable to render.
 * All other parameters are explained in greater detail below
 
 
