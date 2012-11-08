@@ -313,13 +313,13 @@
       _ref = this.properties;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         prop = _ref[_i];
-        propertiesStr.push(prop.toString());
+        propertiesStr.push(prop.name+': <tag>'+prop.dataType+'</tag>');
       }
       strong = '<span style="font-weight: bold; color: #000; font-size: 1.0em">';
       stronger = '<span style="font-weight: bold; color: #000; font-size: 1.1em">';
       strongClose = '</span>';
-      classOpen = strong + 'class ' + this.name + '(' + strongClose;
-      classClose = strong + ')' + strongClose;
+      classOpen = strong + 'class ' + this.name + ' ( ' + strongClose;
+      classClose = strong + ' )' + strongClose;
       returnVal = classOpen + '<span>' + propertiesStr.join('</span>, <span>') + '</span>' + classClose;
       if (prefix != null) {
         returnVal = stronger + prefix + strongClose + '<br/>' + returnVal;

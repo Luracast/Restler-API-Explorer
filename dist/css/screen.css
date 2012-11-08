@@ -163,6 +163,20 @@ mark {
     background: rgba(255, 255, 255, 0.8);
 }
 
+tag {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    background-color: #999999;
+    padding: 1px 3px 2px;
+    font-size: xx-small;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 .markdown h3 {
     color: #547f00;
 }
