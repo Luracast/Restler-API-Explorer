@@ -1,6 +1,5 @@
-<td class='code'>{{name}}</td>
+<td class='code'>{{name}}: <tag>{{{signature}}}</tag></td>
 <td>
-	
 	{{#if isBody}}
 		{{#if defaultValue}}
 			<textarea class='body-textarea' name='{{name}}'>{{defaultValue}}</textarea>
@@ -15,10 +14,5 @@
 		    <input minlength='0' name='{{name}}' placeholder='' type='text' value=''/>
 		{{/if}}
 	{{/if}}
-
 </td>
 <td>{{{description}}}</td>
-<td>
-    <span class="model-signature">{{{signature}}}</span>
-</td>
-
