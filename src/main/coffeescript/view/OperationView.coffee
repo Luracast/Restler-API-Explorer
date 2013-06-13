@@ -108,10 +108,13 @@ class OperationView extends Backbone.View
   # puts the response data in UI
   showStatus: (data) ->
     try
-      response_body = "<pre>" + JSON.stringify(JSON.parse(data.responseText), null, 2).replace(/\n/g, "<br>") + "</pre>"
+      if response_body.length > 0
+        response_body = "<pre>" + JSON.stringify(JSON.parse(data.responseText), null, 2).replace(/\n/g, "<br>") + "</pre>"
+      else
+        response_body = "<pre style='color:dimgrey'>[No Content]</pre>"
     catch error
       response_body = "<span style='color:red'>&nbsp;&nbsp;&nbsp;[unable to parse as json; raw response below]</span><br><pre>" + data.responseText + "</pre>"
-    $(".response_code", $(@el)).html "<pre>" + data.status + "</pre>"
+    $(".response_code", $(@el)).html "<pre>" + data.status + ' ' + data.statusText + "</pre>"
     $(".response_body", $(@el)).html response_body
     $(".response_headers", $(@el)).html "<pre>" + data.getAllResponseHeaders() + "</pre>"
     $(".response", $(@el)).slideDown()
