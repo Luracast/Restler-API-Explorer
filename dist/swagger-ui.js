@@ -1165,11 +1165,15 @@ templates['resource'] = template(function (Handlebars,depth0,helpers,partials,da
     OperationView.prototype.showStatus = function(data) {
       var response_body;
       try {
-        response_body = "<pre>" + JSON.stringify(JSON.parse(data.responseText), null, 2).replace(/\n/g, "<br>") + "</pre>";
+        if (response_body.length > 0) {
+          response_body = "<pre>" + JSON.stringify(JSON.parse(data.responseText), null, 2).replace(/\n/g, "<br>") + "</pre>";
+        } else {
+          response_body = "<pre style='color:dimgrey'>[No Content]</pre>";
+        }
       } catch (error) {
         response_body = "<span style='color:red'>&nbsp;&nbsp;&nbsp;[unable to parse as json; raw response below]</span><br><pre>" + data.responseText + "</pre>";
       }
-      $(".response_code", $(this.el)).html("<pre>" + data.status + "</pre>");
+      $(".response_code", $(this.el)).html("<pre>" + data.status + ' ' + data.statusText + "</pre>");
       $(".response_body", $(this.el)).html(response_body);
       $(".response_headers", $(this.el)).html("<pre>" + data.getAllResponseHeaders() + "</pre>");
       $(".response", $(this.el)).slideDown();
