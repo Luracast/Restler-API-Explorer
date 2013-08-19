@@ -108,7 +108,7 @@ class OperationView extends Backbone.View
   # puts the response data in UI
   showStatus: (data) ->
     try
-      if response_body.length > 0
+      if data.responseText.length > 0
         response_body = "<pre>" + JSON.stringify(JSON.parse(data.responseText), null, 2).replace(/\n/g, "<br>") + "</pre>"
       else
         response_body = "<pre style='color:dimgrey'>[No Content]</pre>"
