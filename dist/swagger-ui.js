@@ -260,7 +260,9 @@ function program10(depth0,data) {
   foundHelper = helpers.httpMethod;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.httpMethod; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "' class=\"toggleOperation\">";
+  // Change to red color if delete word is present in the path
+  if (depth0.path.search(/delete/i) >=0) { buffer += escapeExpression(stack1) + "' class=\"toggleOperation\" style=\"background-color: #a41e22;\">";}
+  else { buffer += escapeExpression(stack1) + "' class=\"toggleOperation\">";}
   foundHelper = helpers.httpMethod;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.httpMethod; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
